@@ -1,2 +1,5 @@
+<!--- instatiate the component --->
 <cfset objGreeting = createObject('component', 'greetings') />
-<cfoutput>#objGreeting.sayHello()#</cfoutput>
+<!--- access the method and assign results to a string --->
+<cfset strPersonalGreeting = objGreeting.personalGreeting( firstName="Gary", lastName="Brown") />
+<cfoutput>#strPersonalGreeting#</cfoutput>
