@@ -1,0 +1,11 @@
+<cffunction name="getContact">
+  <cfargument name="ID" type="numeric" default="0" />
+  <cfset var rstContact = "" />
+  <cfquery name="rstContact" datasource="projectTracker">
+    SELECT firstName,lastName FROM Owners
+    <cfif arguments.ID GT 0>
+      WHERE ID = <cfqueryparam cfsqltype="cf_sql_integer" value="#arguments.ID#" />
+    </cfif>
+  </cfquery>
+  <cfreturn rstContact />
+</cffunction>
